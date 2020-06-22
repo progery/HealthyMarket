@@ -1,4 +1,4 @@
-package com.progeri.healthymarket
+package com.progery.healthymarket
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

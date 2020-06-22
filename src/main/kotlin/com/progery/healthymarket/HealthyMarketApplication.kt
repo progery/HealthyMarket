@@ -1,4 +1,4 @@
-package com.progeri.healthymarket
+package com.progery.healthymarket
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
