@@ -4,6 +4,8 @@ build/
 !**/src/main/**
 !**/src/test/**
 
+src/main/resources/application.yaml
+
 ### STS ###
 .apt_generated
 .classpath
