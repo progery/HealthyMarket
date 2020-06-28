@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping(
         path = ["/users"],
         produces = [APPLICATION_JSON_VALUE]
-) // todo зобраться с массивами
+)
 class UserController @Autowired constructor(
         private val userService: IUserService
 ) {

@@ -16,11 +16,7 @@ import org.springframework.stereotype.Service
  */
 
 @Service
-class UserServiceImpl: IUserService {
-
-    @Autowired
-    lateinit var userRepository: UserRepository
-
+class UserServiceImpl @Autowired constructor(private val userRepository: UserRepository) : IUserService {
 
     override fun getAll(): List<UserDto> {
         val users = userRepository.findAll()

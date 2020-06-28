@@ -9,6 +9,7 @@ import com.progery.healthymarket.services.dto.UserDto
  * Project: healthymarket
  * Description:
  */
+
 interface IUserService {
 
     fun getAll(): List<UserDto>
