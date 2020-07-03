@@ -9,7 +9,9 @@ package com.progery.healthymarket.services.dto
  */
 
 data class UserDto(
-        val id: Int,
-        val name: String,
-        val age: Int
-)
+        val id: Int=-1,
+        val name: String="",
+        val age: Int=-1
+){
+
+}

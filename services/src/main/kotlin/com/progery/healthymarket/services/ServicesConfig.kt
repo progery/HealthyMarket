@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Import
  */
 
 @Configuration
-@ComponentScan(basePackages = ["com.progery.healthymarket.services.service"])
+@ComponentScan(basePackages = ["com.progery.healthymarket.services.service",
+                            "com.progery.healthymarket.services.mapstruct"])
 @Import(DataConfig::class)
 open class ServicesConfig
