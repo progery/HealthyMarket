@@ -9,9 +9,9 @@ package com.progery.healthymarket.services.dto
  */
 
 data class UserDto(
-        val id: Int=-1,
-        val name: String="",
-        val age: Int=-1
-){
-
+        var id: Int?,
+        var name: String?,
+        var age: Int?
+) {
+    constructor(): this(null, null, null)
 }

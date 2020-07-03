@@ -17,7 +17,10 @@ import org.springframework.stereotype.Service
  */
 
 @Service
-class UserServiceImpl @Autowired constructor( private val userRepository: UserRepository, private val userConverter: UserConverter  ) : IUserService {
+class UserServiceImpl @Autowired constructor(
+        private val userRepository: UserRepository,
+        private val userConverter: UserConverter
+) : IUserService {
 
     override fun getAll(): List<UserDto> {
         val users = userRepository.findAll()
@@ -25,10 +28,9 @@ class UserServiceImpl @Autowired constructor( private val userRepository: UserRe
     }
 
     override fun createUser(userDto: UserDto): UserDto {
-        var user= userConverter.convertToModel(userDto)
-        user=userRepository.save(user)
+        var user = userConverter.convertToModel(userDto)
+        user = userRepository.save(user)
         return userConverter.convertToDto(user);
     }
-
 
 }

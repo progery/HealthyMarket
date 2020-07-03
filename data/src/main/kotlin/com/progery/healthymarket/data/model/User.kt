@@ -17,12 +17,14 @@ data class User(
 
         @Id
         @GeneratedValue
-        val id: Int,
+        var id: Int?,
 
         @Column(name = "name", nullable = false)
-        val name: String,
+        var name: String?,
 
         @Column(name = "age", nullable = false)
-        val age: Int
+        var age: Int?
 
-)
+) {
+        constructor(): this(null, null, null)
+}

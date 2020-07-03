@@ -8,19 +8,15 @@ import org.mapstruct.Mapping
 import org.mapstruct.Mappings
 
 
-@Mapper(componentModel ="spring")
+@Mapper(componentModel = "spring")
 interface UserConverter {
 
-@Mapping(target="name",ignore = true)
-fun convertToDto(user: User):UserDto
+    fun convertToDto(user: User): UserDto
 
-   @InheritInverseConfiguration
-fun convertToModel(userDto: UserDto): User
+    fun convertToModel(userDto: UserDto): User
 
-fun convertToDto(user: List<User>): List <UserDto>
+    fun convertToDto(user: List<User>): List<UserDto>
 
-   @InheritInverseConfiguration
-fun convertToModel(userDto: List<UserDto>): List<User>
-
+    fun convertToModel(userDto: List<UserDto>): List<User>
 
 }
