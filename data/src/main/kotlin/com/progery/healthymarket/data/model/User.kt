@@ -1,5 +1,6 @@
 package com.progery.healthymarket.data.model
 
+import com.github.pozo.KotlinBuilder
 import javax.persistence.*
 
 /**
@@ -13,18 +14,17 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "users")
+@KotlinBuilder
 data class User(
 
         @Id
         @GeneratedValue
-        var id: Int?,
+        val id: Int,
 
         @Column(name = "name", nullable = false)
-        var name: String?,
+        val name: String,
 
         @Column(name = "age", nullable = false)
-        var age: Int?
+        val age: Int
 
-) {
-        constructor(): this(null, null, null)
-}
+)

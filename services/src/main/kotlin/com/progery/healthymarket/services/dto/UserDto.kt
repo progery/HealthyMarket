@@ -1,5 +1,7 @@
 package com.progery.healthymarket.services.dto
 
+import com.github.pozo.KotlinBuilder
+
 /**
  * Created by evgenii
  * Date: 27.06.2020
@@ -8,10 +10,9 @@ package com.progery.healthymarket.services.dto
  * Description:
  */
 
+@KotlinBuilder
 data class UserDto(
-        var id: Int?,
-        var name: String?,
-        var age: Int?
-) {
-    constructor(): this(null, null, null)
-}
+        val id: Int,
+        val name: String,
+        val age: Int
+)
