@@ -1,6 +1,8 @@
 package com.progery.healthymarket.services.service.impl
 
+import com.progery.healthymarket.data.model.User
 import com.progery.healthymarket.data.repository.UserRepository
+import com.progery.healthymarket.services.dto.PurchaseDto
 import com.progery.healthymarket.services.dto.UserDto
 import com.progery.healthymarket.services.mapstruct.UserConverter
 import com.progery.healthymarket.services.service.IUserService
@@ -31,6 +33,11 @@ class UserServiceImpl @Autowired constructor(
         var user = userConverter.convertToModel(userDto)
         user = userRepository.save(user)
         return userConverter.convertToDto(user);
+    }
+
+    override fun addPurchase(id: Int, purchaseDto: PurchaseDto): UserDto {
+        val user = userRepository.findById(id).orElse(User())
+        user.purchases.add()
     }
 
 }

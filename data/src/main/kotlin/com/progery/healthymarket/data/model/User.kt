@@ -14,17 +14,26 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "users")
-@KotlinBuilder
+//@KotlinBuilder
 data class User(
 
         @Id
         @GeneratedValue
-        val id: Int,
+        var id: Int?,
 
         @Column(name = "name", nullable = false)
-        val name: String,
+        var name: String?,
 
         @Column(name = "age", nullable = false)
-        val age: Int
+        var age: Int?,
 
-)
+        @OneToOne(cascade = [CascadeType.ALL], orphanRemoval = true)
+        var secretCredentials: SecretCredentials?,
+
+        @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
+        @JoinColumn(name = "user_id")
+        var purchases: List<Purchase>?
+
+) {
+        constructor(): this(null, null, null, null, null)
+}

@@ -1,5 +1,6 @@
 package com.progery.healthymarket.web.controller
 
+import com.progery.healthymarket.services.dto.PurchaseDto
 import com.progery.healthymarket.services.dto.UserDto
 import com.progery.healthymarket.services.service.IUserService
 import org.springframework.beans.factory.annotation.Autowired
@@ -23,6 +24,14 @@ class UserController @Autowired constructor(
     @PostMapping(consumes = [APPLICATION_JSON_VALUE])
     fun createUser(@RequestBody user: UserDto): UserDto {
         return userService.createUser(user)
+    }
+
+    @PostMapping(path = ["/{id}"], consumes = [APPLICATION_JSON_VALUE])
+    fun addPurchase(
+            @PathVariable(name = "id") id: Int,
+            @RequestBody purchaseDto: PurchaseDto
+    ): UserDto {
+        return userService.addPurchase(id, purchaseDto)
     }
 
 }
